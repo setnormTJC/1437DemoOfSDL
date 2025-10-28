@@ -15,6 +15,8 @@ struct Person
 
 int main()
 {
+
+	//...
 	Person me = { 37, 69, "blue" };
 	std::cout << me.eyeColor << "\n";
 
