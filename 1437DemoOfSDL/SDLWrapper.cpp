@@ -1,7 +1,9 @@
 #include "SDLWrapper.h"
 
 #include<chrono> 
-#include<thread> 
+#include<thread> //used for a SLEEP function (for framerate)
+
+#include "Color.h"
 
 
 //#include "Texture.h"
@@ -83,31 +85,42 @@ SDL_AppResult SDLWrapper::iterate()
 void SDLWrapper::draw(/*const std::unordered_map<Vec2, Color>& rasteredPixels*/) const
 {
 
+    Color theUgliestColor = {255 , 255, 0, 255 }; //yellow, according to ONE student
+
+    
     SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, 255);
     SDL_RenderClear(pRenderer);
 
-    std::vector<int> lineXValues =
+    //std::vector<int> lineXValues =
+    //{
+    //    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    //};
+
+
+    for (int x = 0; x < width; ++x)
     {
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-    };
-
-
-    for (const auto& x : lineXValues)
-    {
-        if (frameCount > 100)
+        for (int y = 0; y < height; ++y)
         {
-            SDL_SetRenderDrawColor(pRenderer, 0, 255, 0, 255);
+            if (frameCount % 2 == 0)
+            {
+                SDL_SetRenderDrawColor(pRenderer, theUgliestColor.r, theUgliestColor.g, theUgliestColor.b,
+                    theUgliestColor.a);
+            }
+
+            else
+            {
+                Color pink_thePrettiestColor = { 255, 192, 203, 255 };
+                SDL_SetRenderDrawColor
+                (   pRenderer, 
+                    pink_thePrettiestColor.r, 
+                    pink_thePrettiestColor.g, 
+                    pink_thePrettiestColor.b,
+                    pink_thePrettiestColor.a);
+            }
+            SDL_RenderPoint(pRenderer, x, y);
         }
-
-        else
-        {
-            SDL_SetRenderDrawColor(pRenderer, 255, 0, 0, 255);
-        }
-        float y = 100; 
-
-
-        SDL_RenderPoint(pRenderer, x, y);
     }
+
     SDL_RenderPresent(pRenderer);
     std::cout << "Draw it, draw it real good- frame count: " << frameCount << "\n";
 
