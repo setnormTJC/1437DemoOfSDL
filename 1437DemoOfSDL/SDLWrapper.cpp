@@ -87,39 +87,39 @@ void SDLWrapper::draw(/*const std::unordered_map<Vec2, Color>& rasteredPixels*/)
 
     Color theUgliestColor = {255 , 255, 0, 255 }; //yellow, according to ONE student
 
-    
+   
     SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, 255);
     SDL_RenderClear(pRenderer);
 
-    //std::vector<int> lineXValues =
-    //{
-    //    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-    //};
+    float xStart = 100; 
+    float xEnd = 400; 
 
+    float yStart = 200; 
+    float yEnd = 500; 
 
-    for (int x = 0; x < width; ++x)
+    float m = (yEnd - yStart) / (xEnd - xStart); 
+
+   
+    for (int x = xStart; x < xEnd; ++x) //caution: float to int conversion 
     {
-        for (int y = 0; y < height; ++y)
+        if (frameCount % 2 == 0)
         {
-            if (frameCount % 2 == 0)
-            {
-                SDL_SetRenderDrawColor(pRenderer, theUgliestColor.r, theUgliestColor.g, theUgliestColor.b,
-                    theUgliestColor.a);
-            }
-
-            else
-            {
-                Color pink_thePrettiestColor = { 255, 192, 203, 255 };
-                SDL_SetRenderDrawColor
-                (   pRenderer, 
-                    pink_thePrettiestColor.r, 
-                    pink_thePrettiestColor.g, 
-                    pink_thePrettiestColor.b,
-                    pink_thePrettiestColor.a);
-            }
-            SDL_RenderPoint(pRenderer, x, y);
+            SDL_SetRenderDrawColor(pRenderer, theUgliestColor.r, theUgliestColor.g, theUgliestColor.b,
+                theUgliestColor.a);
         }
+
+        else
+        {
+            SDL_SetRenderDrawColor(pRenderer, 255, 0, 0, 255); 
+        }
+
+        int y = 123; 
+
+        SDL_RenderPoint(pRenderer, x, y);
+    
     }
+
+    //SDL_audio_device
 
     SDL_RenderPresent(pRenderer);
     std::cout << "Draw it, draw it real good- frame count: " << frameCount << "\n";
