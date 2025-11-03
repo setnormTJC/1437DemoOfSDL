@@ -4,10 +4,7 @@
 #include<thread> //used for a SLEEP function (for framerate)
 
 #include "Color.h"
-
-
-//#include "Texture.h"
-
+#include"Sound.h"
 
 SDLWrapper::SDLWrapper(int width, int height)
     :width(width), height(height)
@@ -23,6 +20,21 @@ SDL_AppResult SDLWrapper::init()
         SDL_Log("Failed: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
+
+    //SDL_AudioSpec desired{};
+    //desired.freq = 48000;
+    //desired.format = SDL_AUDIO_F32;
+    //desired.channels = 1;
+    ////SDL_Audio_Device
+    //audioDevice = SDL_OpenAudioDevice(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &desired, &audioSpec, 0);
+
+    //if (audioDevice == 0) {
+    //    SDL_Log("Failed to open audio device: %s", SDL_GetError());
+    //    return SDL_APP_FAILURE;
+    //}
+
+    //SDL_PauseAudioDevice(audioDevice, 0); // start playback
+
 
     return SDL_APP_CONTINUE;
 }
@@ -151,82 +163,6 @@ SDL_AppResult SDLWrapper::handleEvent(SDL_Event* pEvent/*, Camera& camera, MeshI
 
         std::cout << keyID << "\n";
 
-        float cameraStepSize = 0.1f;
-        bool isPaused = false;
-        float thetaRotation = M_PI / 10.0f; //let this be the same for x, y, and z
-        float objectStepSize = 0.1f;
-
-        /*Might consider moving this to a helper method (ex: handleKeyboardEvent)*/
-        //switch (keyID) //note that cases are organized alphabetically (not "logically") 
-        //{
-        //case SDLK_A: //note that the user is allowed to enter 'a' here 
-        //    std::cout << "Moving left " << cameraStepSize << "\n";
-        //    camera.moveLeft(cameraStepSize);
-        //    break;
-
-        //case SDLK_D: //the K stands for "key" probably
-        //    std::cout << "Moving right " << cameraStepSize << "\n";
-        //    camera.moveRight(cameraStepSize);
-        //    break;
-
-        //case SDLK_DOWN:
-        //    std::cout << "Moving down " << cameraStepSize << "\n";
-        //    camera.moveDown(cameraStepSize);
-        //    break;
-
-        //case SDLK_P:
-        //    std::cout << "Pausing animation...\n";
-        //    std::system("pause");
-        //    break;
-
-        //case SDLK_S:
-        //    std::cout << "Moving backerds\n";
-        //    camera.moveBackward(cameraStepSize);
-        //    break;
-
-        //case SDLK_T: //added this case just to test getting object off of the screen - I should improve this later
-        //    //or just give a Mesh its own "natural" movement/animation that is not controlled by the user
-        //    std::cout << "Translating object to the right\n";
-        //    auto newTranslation = meshInstance.getTranslation();
-        //    newTranslation.x -= objectStepSize;
-        //    meshInstance.setTranslation(newTranslation);
-        //    break;
-
-        //case SDLK_UP:
-        //    std::cout << "Moving up " << cameraStepSize << "\n";
-        //    camera.moveUp(cameraStepSize);
-        //    break;
-
-        //case SDLK_W:
-        //    std::cout << "Moving camera forward\n";
-        //    camera.moveForward(cameraStepSize);
-        //    break;
-
-        //case SDLK_X:
-        //    std::cout << "Rotating about x by " << ((180.0f) / M_PI) * thetaRotation << "\n";
-        //    auto newXRotation = meshInstance.getRotation(); //get the current rotation vector 
-        //    newXRotation.x += thetaRotation; //and update the x-component
-        //    meshInstance.setRotation(newXRotation);
-        //    break;
-
-        //case SDLK_Y:
-        //    std::cout << "Rotating about y by " << ((180.0f) / M_PI) * thetaRotation << "\n";
-        //    auto newYRotation = meshInstance.getRotation();
-        //    newYRotation.y += thetaRotation;
-        //    meshInstance.setRotation(newYRotation);
-        //    break;
-
-        //case SDLK_Z:
-        //    std::cout << "Rotating about zed by " << ((180.0f) / M_PI) * thetaRotation << "\n";
-        //    auto newZRotation = meshInstance.getRotation();
-        //    newZRotation.z += thetaRotation;
-        //    meshInstance.setRotation(newZRotation);
-        //    break;
-
-        //default:
-        //    std::cout << "Unhandled key pressed\n";
-        //    break;
-        //}
 
     }
 

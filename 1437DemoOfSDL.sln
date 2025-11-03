@@ -7,7 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1437DemoOfSDL", "1437DemoOf
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL3", "..\..\..\..\Downloads\SDL-release-3.2.24\SDL-release-3.2.24\VisualC\SDL\SDL.vcxproj", "{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "One student submission of the polymorphism assignment", "One student submission of the polymorphism assignment\One student submission of the polymorphism assignment.vcxproj", "{4B77CAB4-484E-4EFE-ADD9-248111730C3F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolymorphismSubmission", "PolymorphismSubmission\PolymorphismSubmission.vcxproj", "{B46044DF-2C97-4A93-BB28-5603599C5C7F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "November3rdStuff", "November3rdStuff\November3rdStuff.vcxproj", "{9FA39AF1-C832-4D97-9556-09B6BA79E516}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Some template stuff", "Some template stuff\Some template stuff.vcxproj", "{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +37,30 @@ Global
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.Release|x64.Build.0 = Release|x64
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.Release|x86.ActiveCfg = Release|Win32
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.Release|x86.Build.0 = Release|Win32
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Debug|x64.ActiveCfg = Debug|x64
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Debug|x64.Build.0 = Debug|x64
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Debug|x86.ActiveCfg = Debug|Win32
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Debug|x86.Build.0 = Debug|Win32
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Release|x64.ActiveCfg = Release|x64
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Release|x64.Build.0 = Release|x64
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Release|x86.ActiveCfg = Release|Win32
-		{4B77CAB4-484E-4EFE-ADD9-248111730C3F}.Release|x86.Build.0 = Release|Win32
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Debug|x64.ActiveCfg = Debug|x64
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Debug|x64.Build.0 = Debug|x64
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Debug|x86.ActiveCfg = Debug|Win32
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Debug|x86.Build.0 = Debug|Win32
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Release|x64.ActiveCfg = Release|x64
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Release|x64.Build.0 = Release|x64
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Release|x86.ActiveCfg = Release|Win32
+		{B46044DF-2C97-4A93-BB28-5603599C5C7F}.Release|x86.Build.0 = Release|Win32
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Debug|x64.ActiveCfg = Debug|x64
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Debug|x64.Build.0 = Debug|x64
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Debug|x86.ActiveCfg = Debug|Win32
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Debug|x86.Build.0 = Debug|Win32
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Release|x64.ActiveCfg = Release|x64
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Release|x64.Build.0 = Release|x64
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Release|x86.ActiveCfg = Release|Win32
+		{9FA39AF1-C832-4D97-9556-09B6BA79E516}.Release|x86.Build.0 = Release|Win32
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Debug|x64.ActiveCfg = Debug|x64
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Debug|x64.Build.0 = Debug|x64
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Debug|x86.ActiveCfg = Debug|Win32
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Debug|x86.Build.0 = Debug|Win32
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Release|x64.ActiveCfg = Release|x64
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Release|x64.Build.0 = Release|x64
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Release|x86.ActiveCfg = Release|Win32
+		{D04D62C8-EA4F-4ACC-9EFA-35F4EE5524AC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

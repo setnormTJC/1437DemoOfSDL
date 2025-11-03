@@ -19,14 +19,20 @@
 class SDLWrapper
 {
 private:
-	static constexpr int TARGET_FPS = 10;
-	static constexpr std::chrono::milliseconds frameDelay{ 1000 / TARGET_FPS };
+	static constexpr int TARGET_FPS = 1;
+	static constexpr std::chrono::milliseconds frameDelay{ 3'000 / TARGET_FPS };
+	//delay for 3 seconds between frames - allow sound wave to play
 
 	SDL_Window* pWindow = nullptr;
 	SDL_Renderer* pRenderer = nullptr;
 
 	int width{}, height{};
 	int frameCount{};
+
+	/*Audio guys............................*/
+	SDL_AudioDeviceID audioDevice = 0; //the type is an alias for uint32
+	SDL_AudioSpec audioSpec{}; //a struct (channel count, frequency, and format) 
+
 
 public:
 	SDLWrapper(int width, int height);
