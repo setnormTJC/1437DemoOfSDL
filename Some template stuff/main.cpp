@@ -4,6 +4,8 @@
 
 #include<array> //static (size CANNOT change) 
 #include <iostream>
+#include<exception>
+
 
 #include<vector> //dynamic array (which can grow and shrink) 
 #include "CustomStaticArray.h"
@@ -18,39 +20,39 @@ void printThings(std::vector <SomeDataType> listOfThangs)
     }
 }
 
-
-//void printListOfNumbers(std::vector <int> listOfNumbers)
-//{
-//    for (const auto& num : listOfNumbers)
-//    {
-//        std::cout << num << "\n";
-//
-//    }
-//}
-//
-//void printListOfStrings(const std::vector<std::string>& strings)
-//{
-//    for (const auto& currentString : strings) //DRY
-//    {
-//        std::cout << currentString << "\n";
-//    }
-//}
-
 int main()
 {
-
-    int nums[5] = { 1, 2, 3, 4, 5};
-
-    std::array<std::string, 3> names =
+    try
     {
-        {"Alice", "Bob", "Carol"}
-    };
+        constexpr int arrayMaxSize = 3; 
+        std::array<std::string, arrayMaxSize> names =
+        {
+            {"Alice", "Bob", "Carol"}
+        };
 
-    //std::vector nums = { 1, 2, 3 }; 
-    CustomStaticArray<std::string, 4>  customStaticArray("Bobbo"); //calls default constructor
-    
-    int a = 123; 
+        //std::vector nums = { 1, 2, 3 }; 
+        CustomStaticArray<std::string, 4>  customStaticArray("Bobbo"); //calls parameterized constructor
 
+        //CustomStaticArray<int, 5> otherCustomStaticArray(1);
+
+        int index = 1;
+        std::cout << customStaticArray.operator[](index) << "\n";
+        customStaticArray[0] = "Alice";
+        customStaticArray[1] = "Bob";
+        customStaticArray[2] = "Carol";
+        //customStaticArray[3] = "Darth";
+
+        std::cout << "After inserting Alice, Bob, Carol, the FRONT of the array contains: "
+            << customStaticArray.getFront() << "\n";
+
+        int a = 123;
+    } //end of the "try block"
+
+    catch (const std::exception& exception)
+    {
+        std::system("start https://youtu.be/mJZZNHekEQw?si=5lu_OcLkmEV7OCak&t=85");
+        std::cout << exception.what() << "\n";
+    }
     
     //=
     //{
